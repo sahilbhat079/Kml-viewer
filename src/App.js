@@ -5,7 +5,6 @@ import KMLUploader from "./components/KMLUploader";
 import MapView from "./components/MapView";
 import SummaryTable from "./components/SummaryTable";
 import DetailsTable from "./components/DetailsTable";
-// import "./App.css";
 
 function App() {
   const [geojsonData, setGeojsonData] = useState(null);

@@ -16,15 +16,25 @@ const KMLUploader = ({ onKMLParsed }) => {
       const xmlString = e.target.result;
       const kml = new DOMParser().parseFromString(xmlString, "text/xml");
       const geojson = toGeoJSON.kml(kml);
+      console.log(geojson);
       onKMLParsed(geojson);
     };
     reader.readAsText(file);
   };
 
   return (
-    <div>
-      <input type="file" accept=".kml" onChange={handleFileUpload} />
-      {fileName && <p>Uploaded: {fileName}</p>}
+    <div className="kml-uploader">
+      <label htmlFor="file-upload" className="custom-file-upload">
+        Upload KML File
+      </label>
+      <input
+        id="file-upload"
+        type="file"
+        accept=".kml"
+        onChange={handleFileUpload}
+        className="file-input"
+      />
+      {fileName && <p className="file-name">Uploaded: {fileName}</p>}
     </div>
   );
 };
