@@ -1,0 +1,28 @@
+@import "leaflet/dist/leaflet.css";
+
+.App {
+  padding: 20px;
+  text-align: center;
+}
+
+.buttons {
+  margin: 20px 0;
+}
+
+.buttons button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
