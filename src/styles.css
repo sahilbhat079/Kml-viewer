@@ -1,8 +1,21 @@
 @import "leaflet/dist/leaflet.css";
 
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+}
+
 .App {
-  padding: 20px;
   text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
 }
 
 .buttons {
@@ -10,19 +23,107 @@
 }
 
 .buttons button {
-  margin: 0 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
   padding: 10px 20px;
-  font-size: 16px;
+  margin: 5px;
+  border-radius: 5px;
   cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
-table {
+.buttons button:hover {
+  background-color: #0056b3;
+}
+
+.buttons button:active {
+  background-color: #004080;
+}
+
+/* Optional: Add professional styling for the tables */
+.SummaryTable,
+.DetailsTable {
   margin: 20px auto;
-  border-collapse: collapse;
+  width: 90%;
+  max-width: 1000px;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  font-size: 14px;
 }
 
-th,
-td {
-  padding: 10px;
-  border: 1px solid #ddd;
+.SummaryTable th,
+.DetailsTable th {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.SummaryTable td,
+.DetailsTable td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.2s ease;
+}
+
+.SummaryTable tr:not(:last-child) td,
+.DetailsTable tr:not(:last-child) td {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.SummaryTable tr:nth-child(even),
+.DetailsTable tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.SummaryTable tr:hover,
+.DetailsTable tr:hover {
+  background-color: #e9ecef;
+}
+
+.SummaryTable tr:last-child td,
+.DetailsTable tr:last-child td {
+  border-bottom: none;
+}
+
+/* Add a subtle animation on row hover */
+.SummaryTable tr,
+.DetailsTable tr {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.SummaryTable tr:hover,
+.DetailsTable tr:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Add a border-radius to the first and last rows */
+.SummaryTable tr:first-child th:first-child,
+.DetailsTable tr:first-child th:first-child {
+  border-top-left-radius: 10px;
+}
+
+.SummaryTable tr:first-child th:last-child,
+.DetailsTable tr:first-child th:last-child {
+  border-top-right-radius: 10px;
+}
+
+.SummaryTable tr:last-child td:first-child,
+.DetailsTable tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+
+.SummaryTable tr:last-child td:last-child,
+.DetailsTable tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
 }
